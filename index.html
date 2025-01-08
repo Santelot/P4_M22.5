@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P4-M22.5</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select { font-size: 1em; padding: 5px; }
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step6Activity3 = document.querySelector('#activity-3 .step-6');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step6Activity3) step6Activity3.style.display = 'none';
+            } else {
+                if (activity2) activity2.style.display = 'block';
+                if (step6Activity3) step6Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P4-M22.5</h1>
+    </div>
+    <div class="container">
+        <!-- Selector de tiempo de clase -->
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+
+        <!-- Aquí se insertarán las actividades dinámicamente -->
+        
+        <!-- Actividad 0 -->
+<div id="activity-0" class="activity" data-time="N/A">
+    <div class="banner" onclick="toggleContent('activity_0_content')">
+        <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Verificar materiales y recursos necesarios para la base de rescate.
+        </div>
+    </div>
+    <div id="activity_0_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1:</strong> Proyectar Diapositiva 1 "Lista de Materiales: ¡Preparando la Base de Rescate!" y verificar que estén disponibles los materiales:
+                    <ul>
+                        <li><strong>Cutebots</strong> con sensores de línea y baterías cargadas.</li>
+                        <li><strong>Computadoras</strong> o tabletas con software de programación instalado.</li>
+                        <li><strong>Plantillas</strong> de seguidor de líneas de Gnius Club con curvas y bifurcaciones.</li>
+                        <li><strong>Sets de 6 legos</strong> para cada estudiante, colocados en su lugar.</li>
+                    </ul>
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    No aplica
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity" data-time="2">
+    <div class="banner" onclick="toggleContent('activity_1_content')">
+        <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Bienvenida y presentación de los objetivos del día.
+        </div>
+    </div>
+    <div id="activity_1_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 2 "¡Bienvenidos Equipos de Búsqueda Robótica de Precisión!" con el tema del día.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Hola, Genios! 🌟 ¡Bienvenidos a la base de operaciones de Búsqueda Robótica de Precisión! Hoy, como equipos de rescate, vamos a programar nuestros Cutebots para seguir líneas y superar recorridos desafiantes. ¡Prepárense para misiones que pondrán a prueba nuestra precisión, toma de decisiones y trabajo en equipo! 🚀"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 3 "¿Cómo te sientes hoy, Especialista en Rescate?" con poses temáticas de búsqueda y rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas en rescate, díganme cómo se sienten hoy: <br><br>
+                    - <strong>Si están listos</strong> para empezar la misión y explorar nuevos recorridos, activen el Modo Exploración, moviendo un brazo hacia adelante como si estuvieran buscando la ruta, y digan '¡Ruta detectada!'. 📡 <br><br>
+                    - <strong>Si necesitan un poco más</strong> de concentración para planificar la estrategia, pongan las manos en los ojos como si estuvieran enfocando el objetivo. 🧐 <br><br>
+                    ¡Vamos a calibrar nuestras mentes y prepararnos para la acción!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 4 "Ritual de Agradecimiento: ¡Gracias por la Misión de Rescate!" y guiar a los estudiantes en el ritual temático.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Juntamos nuestras manos y decimos: '¡Gracias por estar aquí, Genios especialistas en rescate! Hoy vamos a programar nuestros Cutebots para que sigan líneas, tomen decisiones en bifurcaciones y trabajemos en equipo para lograr misiones exitosas. ¡Será un día lleno de aprendizaje, desafíos y trabajo en equipo para rescatar el día! 🌟💡'"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 5 "Objetivos de la Misión: ¡Ruta de Rescate!".
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, Equipos de Búsqueda Robótica de Precisión! Aquí están los objetivos de nuestra misión de hoy: <br><br>
+                    1. <strong>Programar el Cutebot</strong> para que siga una línea con curvas y ángulos hasta un punto específico. <br><br>
+                    2. <strong>Lograr que el Cutebot</strong> tome decisiones en una bifurcación, eligiendo la ruta de rescate. <br><br>
+                    3. <strong>Trabajar en equipo</strong> para mejorar nuestro código y optimizar el rendimiento del Cutebot en las misiones de rescate. <br><br>
+                    ¡Prepárense para superar todos los desafíos en cada ruta!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity" data-time="3">
+    <div class="banner" onclick="toggleContent('activity_2_content')">
+        <div class="title">💡 Actividad 2: Brain Vitamin ⏰ Tiempo: 3 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Ejercicio creativo para construir el equipo de rescate.
+        </div>
+    </div>
+    <div id="activity_2_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 6 "¡Activación Cerebral: Construye tu Equipo de Rescate!" Explicar que utilizarán los legos para crear un personaje que será parte de su equipo de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas en rescate, vamos a activar nuestra creatividad e imaginación! Hoy, con nuestros sets de legos, crearemos un personaje único que será parte de nuestro equipo de rescate. ¡Prepárense para construir, imaginar y describir sus creaciones como verdaderos ingenieros y creativos!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 7 "¡Crea y Describe: Tu Especialista en Rescate!". Mostrar instrucciones para el ejercicio.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, especialistas en rescate! Sigan mis instrucciones: <br><br>
+                    1. Utilicen sus <strong>6 legos</strong> para crear un personaje que será parte de su equipo de rescate. <br><br>
+                    2. <strong>Denle un nombre</strong> a su personaje. <br><br>
+                    3. Piensen en una <strong>habilidad o poder especial</strong> que tenga su personaje. <br><br>
+                    4. <strong>Describan</strong> cómo se mueve, qué sonido hace y cómo ayuda en las misiones de rescate. <br><br>
+                    ¡Este ejercicio activará nuestra creatividad, imaginación, planificación y habilidades descriptivas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 8 "¡Reflexión: Creatividad en el Rescate!". Guiar una breve discusión sobre cómo el ejercicio se relaciona con la programación de Cutebots y la planificación de misiones de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Excelente trabajo, especialistas en rescate! Ahora reflexionen: <br><br>
+                    - ¿Cómo creen que este ejercicio mejora nuestra <span style='color: red; font-weight: bold;'>creatividad</span> e <span style='color: red; font-weight: bold;'>imaginación</span>? <br><br>
+                    - ¿Qué habilidades activamos al planificar y describir nuestro personaje? <br><br>
+                    Recuerden, la creatividad y la planificación son fundamentales para resolver problemas en las misiones de rescate y para programar nuestros Cutebots de forma eficiente y efectiva. <br><br>
+                    ¡La práctica nos hará especialistas más hábiles e innovadores!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity" data-time="30">
+    <div class="banner" onclick="toggleContent('activity_3_content')">
+        <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Programación y pruebas para superar misiones de rescate autónomo.
+        </div>
+    </div>
+    <div id="activity_3_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 9 "¡Comienza la Misión: Desafíos de Rescate Autónomo!". Explicar el objetivo general del reto y los niveles de dificultad.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas en Búsqueda Robótica de Precisión, la misión ha comenzado! 🚀 Hoy programaremos nuestros Cutebots para que superen los desafíos de rescate y lleguen a los puntos de búsqueda, utilizando todo su ingenio y precisión. Tendremos tres niveles: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>, cada uno diseñado para poner a prueba sus habilidades. ¡Elijan su reto y que comiencen las operaciones!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 10 "Preparación para el Desafío: ¡Listos para la Búsqueda!". Guiar a los estudiantes para verificar y organizar los materiales antes de comenzar.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Antes de desplegarse, equipos de rescate, revisen su equipo! <br><br>
+                    - <strong>Los Cutebots</strong> con sensores de línea y baterías cargadas. <br><br>
+                    - <strong>Sus computadoras</strong> o tabletas listas para programar. <br><br>
+                    - <strong>Plantillas</strong> de seguimiento de líneas de rescate del Gnius Club. <br><br>
+                    - <strong>Sets de 6 legos</strong> para cualquier construcción extra que necesiten. <br><br>
+                    ¡Una buena preparación es clave para el éxito en la misión!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 1 minuto):</strong> Proyectar Diapositiva 11 "Espacio de Pruebas: ¡Rutas de Rescate!". Pedir a los equipos que coloquen las plantillas en su espacio de trabajo y las posicionen correctamente para las misiones de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es hora de preparar sus bases de operaciones! Coloquen las plantillas de seguimiento de líneas de rescate en sus espacios de trabajo. Asegúrense de que estén bien posicionadas para que los Cutebots puedan seguir las rutas sin problemas. ¡Dejen volar su creatividad para superar los desafíos de programación en cada misión!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 2 minutos):</strong> Proyectar Diapositiva 12 "Desafíos de Rescate: ¡Exploración, Decisión y Adaptación!". Detallar los objetivos y condiciones de cada nivel.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Atención, equipos de rescate! Aquí tienen los desafíos que pondrán a prueba sus habilidades: <br><br>
+                    <strong>Nivel Rookie:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para seguir una línea con curvas y ángulos. <br>
+                    <span style='color: red; font-weight: bold;'>Instrucciones:</span> Utiliza los dos sensores y ajusta la velocidad en los cambios de dirección. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe llegar al punto específico al final de la línea. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Utiliza bloques de control y ajustes de velocidad para la adaptación a los cambios de dirección. <br><br>
+
+                    <strong>Nivel Master:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para elegir el camino correcto en una bifurcación. <br>
+                    <span style='color: red; font-weight: bold;'>Instrucciones:</span> Utiliza los sensores para detectar la bifurcación y elegir el camino correcto hacia el punto de rescate. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe llegar al punto de rescate. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Utiliza bloques condicionales para la toma de decisiones. <br><br>
+
+                    <strong>Nivel Hacker:</strong> <br>
+                    <span style='color: red; font-weight: bold;'>Objetivo:</span> Programar el Cutebot para seguir un laberinto con diferentes tipos de líneas y bifurcaciones. <br>
+                    <span style='color: red; font-weight: bold;'>Instrucciones:</span> Programa el Cutebot para adaptarse a los diferentes tipos de línea y tomar decisiones en cada bifurcación. <br>
+                    <span style='color: red; font-weight: bold;'>Condiciones:</span> El Cutebot debe seguir el laberinto completo. <br>
+                    <span style='color: red; font-weight: bold;'>Consejo:</span> Planifica la ruta y crea algoritmos de decisión para cada bifurcación."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 5 (Tiempo: 20 minutos):</strong> Proyectar Diapositiva 13 "¡Manos a la Obra: A Programar el Rescate Autónomo!". Explicar que los equipos programarán sus Cutebots con el objetivo de completar cada misión de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Manos a la obra, especialistas en rescate! 🚀 Ahora programen sus Cutebots para superar cada desafío en las misiones de rescate. Recuerden que la lógica, la precisión, la adaptación y la toma de decisiones son fundamentales para el éxito de cada misión. ¡Adelante, a demostrar su talento en la programación y el rescate!"
+                </td>
+            </tr>
+            <tr class="step-6">
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 6 (Tiempo: 5 minutos):</strong> Proyectar Diapositiva 14 "Pruebas y Ajustes: ¡Perfeccionando la Ruta de Rescate!". Supervisar mientras los equipos prueban sus programas y ajustan las acciones de sus Cutebots en la ruta de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas, es hora de poner a prueba sus creaciones! 🧪 Observen cómo sus Cutebots responden a los desafíos de la ruta. Ajusten el código si es necesario para que el seguimiento, la toma de decisiones y la adaptación sean óptimos. ¡La perseverancia es la clave del éxito en cada misión de rescate!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 7 (Tiempo: 3 minutos):</strong> Proyectar Diapositiva 15 "Demostración de Rescate: Compartiendo Estrategias". Invitar a los equipos a mostrar su trabajo y reflexionar sobre sus estrategias y resultados en cada misión.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas en rescate, es hora de compartir sus resultados! Presenten sus Cutebots en acción y expliquen qué estrategias usaron para superar cada desafío en las misiones de rescate. ¡Aprendamos unos de otros y celebremos nuestra creatividad y trabajo en equipo en la base de operaciones!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 8 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 16 "Revisión de Objetivos: ¡Misión de Rescate Cumplida!". Reflexionar con los estudiantes sobre lo aprendido y cómo lograron cumplir los objetivos planteados en cada misión de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Felicidades, Especialistas en Búsqueda Robótica de Precisión! 🌟 Hoy han superado los desafíos de rescate: <br><br>
+                    - Programaron el Cutebot para seguir una línea con curvas y ángulos hasta un punto específico. <br><br>
+                    - Lograron que el Cutebot tomara decisiones en bifurcaciones y eligiera la ruta de rescate. <br><br>
+                    - Trabajaron en equipo para mejorar su código de seguimiento y optimizar el rendimiento en las misiones de rescate. <br><br>
+                    ¡Han demostrado ser unos verdaderos expertos en la programación de rescate!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity" data-time="7.5">
+    <div class="banner" onclick="toggleContent('activity_4_content')">
+        <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Colaboración en equipo para optimizar las misiones de rescate.
+        </div>
+    </div>
+    <div id="activity_4_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar Diapositiva 17 "Team Gnius: ¡Análisis de la Misión en Equipo!" Explicar cómo los roles y la colaboración permitirán revisar y optimizar los programas en las misiones de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas de Búsqueda Robótica de Precisión, es momento de unir fuerzas y trabajar en equipo como verdaderos profesionales! 🤝 Usaremos el <strong>Team CANVAS</strong> para analizar cómo abordaron las misiones de rescate y cómo podemos mejorar nuestras estrategias y nuestro código en equipo. Cada equipo tendrá roles clave: el <span style='color: red; font-weight: bold;'>Líder</span> guiará la conversación, el <span style='color: red; font-weight: bold;'>Programador</span> ajustará los códigos y el <span style='color: red; font-weight: bold;'>Observador</span> analizará el desempeño. ¡Juntos lograremos misiones de rescate exitosas!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Proyectar la Diapositiva 18 "Formación de Equipos: ¡Expertos en Código de Rescate!". Los estudiantes tendrán 1 minuto para formar equipos de 3 y asignar roles: Líder, Programador y Observador.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Tienen 1 minuto para formar sus equipos de 3, especialistas en rescate! Recuerden: <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Líder</span> dirigirá la conversación y guiará el análisis de la misión. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Programador</span> ajustará el código basado en las ideas del equipo. <br><br>
+                    - El <span style='color: red; font-weight: bold;'>Observador</span> analizará el rendimiento del Cutebot en la ruta de rescate y las posibilidades de mejorar el código. <br><br>
+                    ¡Trabajemos juntos como un equipo de expertos en programación y mejora colaborativa!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 3 minutos):</strong> Proyectar la Diapositiva 19 "Team CANVAS: Estrategias para la Misión de Rescate". Cada equipo debe: 1. Analizar el trabajo realizado. 2. Proponer mejoras según los roles asignados. 3. Diseñar un plan conjunto para optimizar el seguimiento del Cutebot y mejorar el código en equipo.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Usen el <strong>Team CANVAS</strong> para reflexionar sobre su trabajo en las misiones de rescate, especialistas. Pregúntense: <br><br>
+                    - ¿Qué hicimos bien al programar el seguimiento de líneas en cada misión? <br><br>
+                    - ¿Qué podemos mejorar en la toma de decisiones, la adaptación a la ruta y la eficiencia en el rescate? <br><br>
+                    - ¿Cómo podemos trabajar juntos para que nuestro Cutebot tenga el mejor desempeño en la ruta y para optimizar nuestro código de seguimiento y rescate? <br><br>
+                    ¡Compartan ideas y trabajen juntos para mejorar sus estrategias y el código en equipo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 4 (Tiempo: 3 minutos):</strong> Proyectar la Diapositiva 20 "¡Ajustes Finales: Optimizando la Ruta y el Código de Rescate!". Los equipos trabajan en las siguientes tareas: Líder organiza, Programador ajusta códigos, Observador verifica el desempeño en la ruta y el impacto de las mejoras en el código.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas en rescate, es momento de aplicar las mejoras en sus Cutebots y en su código! <br><br>
+                    - <span style='color: red; font-weight: bold;'>Programadores:</span> ajusten los códigos basándose en las recomendaciones de su equipo. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Líderes:</span> asegúrense de que todos estén colaborando en la mejora del código. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Observadores:</span> verifiquen cómo sus Cutebots responden a las rutas de rescate y si han mejorado la eficiencia, la precisión y la calidad del código. <br><br>
+                    ¡Trabajen juntos para que la navegación sea más precisa, eficiente y segura y para optimizar su código de rescate!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity" data-time="3.5">
+    <div class="banner" onclick="toggleContent('activity_5_content')">
+        <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 3.5 minutos</div>
+        <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+        <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+            Reflexión final y organización del espacio de trabajo.
+        </div>
+    </div>
+    <div id="activity_5_content" class="content">
+        <table>
+            <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 1 (Tiempo: 0.5 minutos):</strong> Proyectar la Diapositiva 21 "Revisión de Objetivos: ¡Misión de Rescate Cumplida y Código Mejorado!". Leer los objetivos planteados al inicio y reflexionar sobre lo aprendido y logrado en equipo en las misiones de rescate.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "¡Especialistas en Búsqueda Robótica de Precisión, es momento de celebrar sus logros como expertos en la programación de misiones de rescate y el trabajo colaborativo! 🌟 Revisemos nuestros objetivos: <br><br>
+                    - ¿Programamos el Cutebot para seguir una línea con curvas y ángulos hasta un punto específico? <br><br>
+                    - ¿Logramos que el Cutebot tomara decisiones en bifurcaciones y eligiera la ruta correcta? <br><br>
+                    - ¿Trabajamos en equipo para mejorar nuestro código de seguimiento y optimizar el rendimiento de nuestros Cutebots en las misiones de rescate? <br><br>
+                    ¡Estoy muy orgulloso del trabajo que realizaron hoy y de su compromiso con la precisión, la eficiencia y la colaboración!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 2 (Tiempo: 1 minuto):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Hoy, todos fueron increíbles especialistas en misiones de rescate. Cada equipo colaboró para que los Cutebots siguieran rutas con precisión, adaptándose a los desafíos de las bifurcaciones y optimizando sus códigos. ¡Felicidades a todo el equipo por su dedicación y trabajo colaborativo!"
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                    <strong>Paso 3 (Tiempo: 2 minutos):</strong> Proyectar la Diapositiva 22 "¡A Organizar la Base: Próximas Misiones de Rescate!". Guiar a los estudiantes para recoger y organizar todos los materiales utilizados durante la misión en la base de operaciones.
+                </td>
+                <td style="padding: 10px; vertical-align: top;">
+                    "Ahora, como profesionales de la robótica y la programación de rescate, honremos nuestro espacio de trabajo. Cada equipo es responsable de recoger y organizar todos los materiales utilizados durante esta misión: <br><br>
+                    - <span style='color: red; font-weight: bold;'>Guarden</span> sus Cutebots y computadoras con cuidado. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Asegúrense</span> de que las plantillas de seguimiento de líneas de rescate estén guardadas en su lugar. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Recojan</span> sus sets de legos y guárdenlos listos para próximas misiones creativas. <br><br>
+                    - <span style='color: red; font-weight: bold;'>Limpien</span> sus áreas de trabajo y déjenlas listas para futuras misiones de rescate y desarrollo de código. <br><br>
+                    ¡Recuerden que el orden es un reflejo de nuestro compromiso con la precisión, la eficiencia, la colaboración y la excelencia en el trabajo!"
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+    </div>
+</body>
+</html>
